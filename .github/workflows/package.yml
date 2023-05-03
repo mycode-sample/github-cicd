@@ -1,4 +1,4 @@
-name 打包前后台
+name: 打包前后台
 on:
   push:
     branches: ["master"]
