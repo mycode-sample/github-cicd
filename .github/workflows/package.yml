@@ -1,0 +1,20 @@
+name 打包前后台
+on:
+  push:
+    branches: ["master"]
+jobs:
+  clone_react:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 设置node环境
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.x
+        cache: npm
+        cache-dependency-path: yarn.lock
+    - name: 拉取前台代码
+      run: |
+        git clone --depth 1 https://github.com/wrote-code/media-ui.git
+        cd media-ui
+        yarn install
+        npm run build
