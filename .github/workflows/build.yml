@@ -1,7 +1,9 @@
 name: build-react
+
 on:
   push:
     branches: ["master"]
+
 jobs:
   clone_react:
     runs-on: ubuntu-latest
