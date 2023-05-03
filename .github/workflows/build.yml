@@ -1,12 +1,7 @@
-name: 编译打包
-
+name: build-react
 on:
   push:
-    branches: [ "master", "build-*" ]
-  pull_request:
-    branches: [ "master", "build-*"]
-
-
+    branches: ["main"]
 jobs:
   clone_react:
     runs-on: ubuntu-latest
