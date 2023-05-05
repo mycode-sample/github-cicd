@@ -10,5 +10,18 @@ jobs:
     - name: 拉取前台代码
       run: |
         git clone --depth 1 https://github.com/wrote-code/media-ui.git
+        ls -al
         cd media-ui
+        ls -al
+    - name: 设置node环境
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14.17.6'
+        cache: 'yarn'
+        cache-dependency-path: 'media-ui/yarn.lock'
+    - name: 获取当前目录结构
+      run: |
+        pwd
+        cd
+        pwd
         ls -al
