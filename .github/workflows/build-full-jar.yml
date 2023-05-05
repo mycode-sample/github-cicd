@@ -1,4 +1,4 @@
-name: build-react
+name: build-full-jar
 on:
   push:
     branches: ["main"]
