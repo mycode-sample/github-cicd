@@ -40,7 +40,7 @@ jobs:
         mkdir src/main/resources/static
         cp -r ../media-ui/dist src/main/resources/static
         mvn -v
-        java -v
+        java -version
         mvn -B clean
         mvn -DskipTests=true -B package
 
