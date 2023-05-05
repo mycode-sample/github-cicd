@@ -47,6 +47,7 @@ jobs:
 
       - name: 编译后台代码
         run: |
+          cd media
           mvn -v
           java -version
           mvn -B clean
