@@ -10,9 +10,6 @@ jobs:
     - name: 拉取前台代码
       run: |
         git clone --depth 1 https://github.com/wrote-code/media-ui.git
-        ls -al
-        cd media-ui
-        ls -al
     - name: 设置node环境
       uses: actions/setup-node@v3
       with:
@@ -21,21 +18,16 @@ jobs:
         cache-dependency-path: 'media-ui/yarn.lock'
     - name: 编译前台代码
       run: |
-        pwd
-        ls -al
-        node -v
-        yarn -v
-        npm -v
         cd media-ui
+        node -v
+        npm -v
+        yarn -v
         yarn install
         yarn build
 
     - name: 拉取后台代码
       run: |
         git clone --depth 1 https://github.com/wrote-code/media.git
-        ls -al
-        cd media
-        ls -al
     - name: 设置java环境
       uses: actions/setup-java@v3
       with:
@@ -44,14 +36,12 @@ jobs:
         cache: 'maven'
     - name: 编译后台代码
       run: |
-        pwd
-        ls -al
         cd media
         mkdir src/main/resources/static
-        cp ../media-ui/dist src/main/resources/static
+        cp -r ../media-ui/dist src/main/resources/static
         mvn -v
         java -v
-        mvn clean
+        mvn -B clean
         mvn -DskipTests=true -B package
 
     - name: 上传完整制品
