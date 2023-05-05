@@ -26,8 +26,9 @@ jobs:
         node -v
         yarn -v
         npm -v
-        # yarn install
-        # yarn build
+        cd media-ui
+        yarn install
+        yarn build
 
     - name: 拉取后台代码
       run: |
@@ -45,4 +46,18 @@ jobs:
       run: |
         pwd
         ls -al
+        cd media
+        mkdir src/main/resources/static
+        cp ../media-ui/dist src/main/resources/static
+        mvn -v
+        java -v
+        mvn clean
+        mvn -DskipTests=true -B package
+
+    - name: 上传完整制品
+      uses: actions/upload-artifact@v3
+      with:
+        name: 可执行jar包
+        path: media/target/media-*.jar
+
 
