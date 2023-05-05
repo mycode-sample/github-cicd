@@ -6,7 +6,7 @@ jobs:
   clone_react:
     runs-on: ubuntu-latest
     steps:
-   
+
     - name: 拉取前台代码
       run: |
         git clone --depth 1 https://github.com/wrote-code/media-ui.git
@@ -19,9 +19,30 @@ jobs:
         node-version: '14.17.6'
         cache: 'yarn'
         cache-dependency-path: 'media-ui/yarn.lock'
-    - name: 获取当前目录结构
+    - name: 编译前台代码
       run: |
         pwd
-        cd
+        ls -al
+        node -v
+        yarn -v
+        npm -v
+        # yarn install
+        # yarn build
+
+    - name: 拉取后台代码
+      run: |
+        git clone --depth 1 https://github.com/wrote-code/media.git
+        ls -al
+        cd media
+        ls -al
+    - name: 设置java环境
+      uses: actions/checkout@v3
+      with:
+        distribution: 'temurin'
+        java-version: '8'
+        cache: 'maven'
+    - name: 编译后台代码
+      run: |
         pwd
         ls -al
+
