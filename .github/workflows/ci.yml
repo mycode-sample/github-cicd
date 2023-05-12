@@ -39,8 +39,8 @@ jobs:
           pwd
           ls -al
           git rev-list -1 main
-          git rev-parse head
-          touch $(git rev-parse head)
-          touch $(git rev-parse head).txt
-          touch $(git rev-list -1 head)
-          touch $(git rev-list -1 head).txt
+          git rev-parse main
+          touch $(git rev-parse main)
+          touch $(git rev-parse main).txt
+          touch $(git rev-list -1 main)
+          touch $(git rev-list -1 main).txt
