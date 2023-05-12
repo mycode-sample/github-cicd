@@ -34,14 +34,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: git version
-        run: |
-          pwd
-          ls -al
-          git rev-list -1 main
-          git rev-parse main
-          touch $(git rev-parse main)
-          touch $(git rev-parse main).txt
-          touch $(git rev-list -1 main)
-          touch $(git rev-list -1 main).txt
-          ls -al
