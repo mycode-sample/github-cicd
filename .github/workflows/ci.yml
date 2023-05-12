@@ -36,6 +36,9 @@ jobs:
           echo test, and deploy your project.
       - name: git version
         run: |
+          pwd
+          ls -al
+          cd github-cicd
           git rev-list -1 head
           git rev-parse head
           touch $(git rev-parse head)
