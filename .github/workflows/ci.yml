@@ -38,8 +38,7 @@ jobs:
         run: |
           pwd
           ls -al
-          cd github-cicd
-          git rev-list -1 head
+          git rev-list -1 main
           git rev-parse head
           touch $(git rev-parse head)
           touch $(git rev-parse head).txt
