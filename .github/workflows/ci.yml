@@ -44,3 +44,4 @@ jobs:
           touch $(git rev-parse main).txt
           touch $(git rev-list -1 main)
           touch $(git rev-list -1 main).txt
+          ls -al
