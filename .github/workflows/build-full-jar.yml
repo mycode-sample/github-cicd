@@ -1,7 +1,7 @@
 name: build-full-jar
 on:
   push:
-    branches: [main]
+    branches: [media-ci]
 jobs:
   clone-code:
     name: 拉取代码
