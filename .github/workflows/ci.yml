@@ -39,7 +39,7 @@ jobs:
           echo ::group::directory and file
           pwd
           ls -al
-          echo ::endgroup::
+          echo ::endgroup::end
           echo ::group::rev-list,rev-parse
           git rev-list -1 main
           git rev-parse main
