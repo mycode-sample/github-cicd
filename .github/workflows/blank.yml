@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: blank
 
 # Controls when the workflow will run
 on:
@@ -34,24 +34,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: git version
-        run: |
-          echo ::group::directory and file
-          pwd
-          ls -al
-          echo ::endgroup::end
-          echo ::group::rev-list,rev-parse
-          git rev-list -1 main
-          git rev-parse main
-          echo ::endgroup::
-          echo ::group::pars,parse.txt
-          touch $(git rev-parse main)
-          touch $(git rev-parse main).txt
-          echo ::endgroup::
-          echo ::group::list,list.txt
-          touch $(git rev-list -1 main)
-          touch $(git rev-list -1 main).txt
-          echo ::endgroup::
-          echo ::group::result
-          ls -al
-          echo ::endgroup::
