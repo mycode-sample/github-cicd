@@ -4,3 +4,5 @@
 打包前后台。
 
 测试gitlab集成，gitlab仓库： git@jihulab\.com:mycode-sample/github-cicd.git。
+
+配置github同步
